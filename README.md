@@ -1,6 +1,6 @@
 # ConfigUtil
 
-**Version** v1.0.1
+**Version** v1.0.1 \n
 **Dependencies** [Bukkit](https://hub.spigotmc.org/javadocs/bukkit/overview-summary.html)
 
 
