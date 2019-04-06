@@ -24,6 +24,15 @@ The source checker doesn't actually know if the field/method exists so you got t
 In order to register a valid config class, you must extend the config class [Config](https://github.com/DanielTheDev/ConfigUtil/blob/master/src/com/danielthedev/config/Config.java).
 After that you have to fill in the constructor parameters.
 
+### Config.yml
+```yaml
+enabled: true
+disabled: false
+check-field: 1
+subfield:
+  one: hey
+  two: -28
+```
 
 ```java
 
