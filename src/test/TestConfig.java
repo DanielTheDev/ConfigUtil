@@ -16,8 +16,9 @@ public class TestConfig extends Config {
     '_' is used because we cannot use '-' in a field name.
     '$' is to declaire a subvalue. main$submenu -> main.submenu
 
-    Also make sure to use the correct Object Type for every field in the list
-     */
+    Also make sure to use the correct Object Type for every field in the list.
+    Every field in the class is a value in the defined configuration file,
+    */
 
 
     /*
