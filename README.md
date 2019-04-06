@@ -22,7 +22,7 @@ The source checker doesn't actually know if the field/method exists so you got t
 To create a config value you have to create a 'public static' field in the validator class, it is also important to set the field object to the correct state. also it is required to add the value in the .yml file inside/outside the jar.
 
 ```java
-/*
+    /*
     IMPORTANT: A field name will be translated to config code.
     '_' will be translated to '-' in the config.
     '$' will be translated to '.' in the config.
@@ -78,4 +78,34 @@ To create a config value you have to create a 'public static' field in the valid
 
 ```
 
-#### Create Config Value
+#### Create Validator method
+If you want to check and validate the value from the field/config value, you can do that too by adding a notation above the field in the following format ```java @ConfigValueIndicator(parameter = ??????.class, type = ConfigValueType.VALIDATE)```.
+Once you've done that, you got to create the matching method, with the same name as the field you want to validate.
+```java
+    /*
+    This method has the same name as the field "check_field", and is used to validate the specific input.
+    You must make the method 'private static' with 'ConfigValueValidatorResult' as return type, and the type as parameter.
+    It is necessary to name the method the same as the field, and with the same type as parameters
+    */
+    private static ConfigValueValidatorResult check_field(int input) {
+        if(input > 0) {
+            return ConfigValueValidatorResult.success;
+        } else {
+            return ConfigValueValidatorResult.error("value must be positive");
+        }
+    }
+
+    /*
+    This method has the same name as the field "subfield$two", and is used to validate the specific input.
+    You must make the method 'private static' with 'ConfigValueValidatorResult' as return type, and the type as parameter.
+    It is necessary to name the method the same as the field, and with the same type as parameters
+    This method is made for subfields, if you use the '$' as keyword, it will be translated to a '.'.
+    */
+    private static ConfigValueValidatorResult subfield$two(int input) {
+        if(input < 0) {
+            return ConfigValueValidatorResult.success;
+        } else {
+            return ConfigValueValidatorResult.error("value must be negative");
+        }
+    }
+```
