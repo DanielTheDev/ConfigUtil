@@ -29,12 +29,12 @@ After that you have to fill in the constructor parameters.
 
     public class TestConfig extends Config {
 
-    public TestConfig(Plugin plugin) {
-        String fileName = "config";
-        boolean fromJar = true;
-        Class<?> validator_class = TestConfig.class;
-        super(plugin, fileName, fromJar, validator_class);
-    }
+        public TestConfig(Plugin plugin) {
+            String fileName = "config";
+            boolean fromJar = true;
+            Class<?> validator_class = TestConfig.class;
+            super(plugin, fileName, fromJar, validator_class);
+        }
     
     }
 ```
