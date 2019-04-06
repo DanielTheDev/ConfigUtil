@@ -1,11 +1,10 @@
-#ConfigUtil
+# ConfigUtil
 
 **Version** v1.0.1
 **Dependencies** [Bukkit](https://hub.spigotmc.org/javadocs/bukkit/overview-summary.html)
 
 
-###Example
-
+### Example
 ```java
     public void onEnable() {
 
